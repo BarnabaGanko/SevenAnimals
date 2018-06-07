@@ -1,1 +1,146 @@
-<h1>HELLO</h1>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Siedem zwierząt</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link  rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <a href="index.html"><h1 id="logo_content">SIEDEM ZWIERZĄT</h1></a>
+        </header>
+        <nav>
+            <a href='index.html'><div class="nav_item">
+                START
+            </div></a>
+            <div class="menu">
+                WEWNĘTRZNE STRONY
+                <div class="nav_menu_side">
+                    <a  href='kameleon.html'><div class="nav_item">
+                        KAMELEON
+                    </div></a>
+                    <a  href='kot.html'><div class="nav_item">
+                        KOT
+                    </div></a>
+                    <a  href='kon.html'><div class="nav_item">
+                        KOŃ
+                    </div></a>
+                    <a  href='krowa.html'><div class="nav_item">
+                        KROWA
+                    </div></a>
+                    <a  href='kaczka.html'><div class="nav_item">
+                        KACZKA
+                    </div></a>
+                    <a  href='kangur.html'><div class="nav_item">
+                        KANGUR
+                    </div></a>
+                    <a  href='koala.html'><div class="nav_item">
+                        KOALA
+                    </div></a>
+                </div>
+            </div>
+            <div class="menu">
+                ZEWNĘTRZNE LINKI
+                <div class="nav_menu_side">
+                    <a  href='https://www.google.pl/search?client=opera&q=zwierzęta+na+k&sourceid=opera&ie=UTF-8&oe=UTF-8' target='_blank'><div class="nav_item">
+                        GOOGLE
+                    </div></a>
+                    <a  href='https://pl.wikipedia.org/w/index.php?search=zwierzęta&title=Specjalna:Szukaj&profile=default&fulltext=1&searchToken=5q0n2ahrigdr9tp7i0xd1k8od' target='_blank'><div class="nav_item">
+                        WIKIPEDIA
+                    </div></a>
+                    <a  href='https://search.yahoo.com/search?ei=UTF-8&fr=opera2&p=zwierzęta+na+k&guccounter=1' target='_blank'><div class="nav_item">
+                        YAHOO!
+                    </div></a>
+                    <a  href='https://www.bing.com/search?q=zwierzęta+na+k&form=OPRTSD&pc=OPER' target='_blank'><div class="nav_item">
+                        BING
+                        </div></a>
+                </div>
+            </div>
+            <a href='galeria.html'><div class="nav_item">
+                GALERIA
+            </div></a>
+        </nav>
+        <article id="aa"><a  href="#ankieta">Ankieta</a>-<a href="#tabela">Tabela</a></article>
+        <section>
+            <article>
+                <h2>STRONA GŁÓWNA</h2>
+                <h3>Na stronie znajdują się:</h3>
+                <ol>
+                    <li>Strona Główna</li>
+                    <li>Linki wewnętrzne</li>
+                    <ul>
+                        <li>Kameleon</li>
+                        <li>Kot</li>
+                        <li>Koń</li>
+                        <li>Kangur</li>
+                        <li>Kaczka</li>
+                        <li>Krowa</li>
+                        <li>Koala</li>
+                    </ul>
+                    <li>Linki zewenętrzne</li>
+                    <ul>
+                        <li>Google.pl</li>
+                        <li>Yahoo.pl</li>
+                        <li>Bing.pl</li>
+                        <li>Wikipedia.pl</li>
+                    </ul>
+                    <li>Galeria</li>
+                </ol>
+            </article>
+            <article  id="tabela">
+                <h2>Tabela</h2>
+                <h4>Któro zwierzę jest najbardziej lubiane</h4>
+                <table>
+                    <tr>
+                        <th>Zwierzę</th><th>%</th>
+                    </tr>
+                    <tr>
+                        <td>Koala</td><td>35</td>
+                    </tr>
+                    <tr>
+                        <td>Kaczka</td><td>4</td>
+                    </tr>
+                    <tr>
+                        <td>Koń</td><td>6</td>
+                    </tr>
+                    <tr>
+                        <td>Krowa</td><td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Kangur</td><td>21</td>
+                    </tr>
+                    <tr>
+                        <td>Kot</td><td>9</td>
+                    </tr>
+                    <tr>
+                        <td>Kameleon</td><td>23</td>
+                    </tr>
+                </table>
+            </article>
+            <article  id="ankieta">
+                <h2>Ankieta</h2>
+                <form  method="GET" action="mailto:bar@wp.pl">
+                    <label  for="imie">Imię:</label>
+                    <input  type="text" name="imie" id="imie" placeholder="Anonim"  required/><br>
+                    <label  for="nazwisko">Nazwisko:</label>
+                    <input  type="text" name="nazwisko" id="nazwisko" placeholder="Anonimowy" required/><br>
+                    <label  for="wiek">Wiek:</label>
+                    <input type="number" name="wiek"  id="wiek" min="1" max="100"  placeholder="Numer" required/><br>
+                    <label  for="klasa">Klasa:</label>
+                    2tc<input type="radio" id="klasa" name="klasa" checked="checked" required/>
+                    nauczyciel<input type="radio"  name="klasa"  required/><br>
+                    <label for="lubie">Lubię:</label>
+                    HTML<input type="checkbox" id="lubie" name="lubie"/>
+                    CSS<input type="checkbox"  name="lubie"/>
+                    JS<input type="checkbox"  name="lubie"/><br>
+                    <input type="submit"  value="Wyślij"/>
+                    
+                </form>
+            </article>
+        </section>
+        <footer>
+            Barnaba Gańko kl. 2TC
+        </footer>
+    </body>
+</html>
