@@ -1,146 +1,688 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Siedem zwierząt</title>
-        <meta charset="UTF-8">
+        <title>TODO supply a title</title>
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link  rel="stylesheet" href="style.css">
+        <style>
+            
+            body,html{
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(-214deg,#105, #299);
+    height:100vh;
+}
+*{
+    box-sizing: border-box;
+    font-family: monospace;
+    transition: all 0.2s;
+}
+h1{
+    margin:10px;
+    text-align: center;
+    font-size:40px;
+    color:white;
+    letter-spacing: 6px;
+    text-shadow: 3px 3px 3px #777;
+}
+div#game_container{
+    height:720px;
+    width:720px;
+    background: rgba(255,255,255,0.5);
+    margin:50px auto  30px;
+}
+table,td,tr,th{
+    border-collapse: collapse;
+    border:  1px  solid black;
+}
+td{
+    width:80px;
+    height:80px;
+    line-height:100%;
+    font-size: 30px;
+    text-align:center;
+}
+tr:nth-of-type(3n) td{
+    border-bottom: 3px  solid  black;
+}
+tr td:nth-of-type(3n){
+    border-right: 3px  solid  black;
+}
+tr:nth-of-type(1) td{
+    border-top: 3px  solid  black;
+}
+tr td:nth-of-type(1){
+    border-left: 3px  solid  black;
+}
+td.unclickable{
+    background:rgba(0,0,0,0.8);
+    color:white;
+}
+input.number_input{
+    width:100%;
+    height:100%;
+    line-height:80px;
+    font-size: 30px;
+    text-align:center;
+    background:none;
+    border:none;
+    outline:none;
+}
+input[type=text]:hover,  input[type=text]:focus{
+     background:rgba(0,0,0,0.5);
+     color:  white;
+    border:none;
+    outline:none;
+}
+div#button_reset{
+    width:100px;
+    height:40px;
+    line-height:36px;
+    text-align:center;
+    font-size:20px;
+    letter-spacing:0.1em;
+    color:white;
+    background:rgba(0,0,0,0.6);
+    border:  2px solid  black;
+    margin:0px auto  30px;
+}
+div#button_reset:hover{
+    color:black;
+    background:rgba(255,255,255,0.6);
+    cursor:pointer;
+}
+h2{
+    margin:6px;
+    text-align: center;
+}
+h3{
+    margin:2px;
+    text-align: center;
+}
+div#menu{
+	position:absolute;
+	top:10px;
+	left:10px;
+	width:200px;
+	background: rgba(255,255,255,0.5);
+}
+div#start{
+	background:white;
+	margin:5px;
+}
+div#level{
+	background: black;
+	margin:5px;
+	padding:5px;
+        display: none;
+}
+div#lvl_easy{
+	background: green;
+
+}
+div#lvl_medium{
+	background: yellow;
+	margin-top:5px;
+}
+div#lvl_hard{
+	background: red;
+	margin-top:5px;
+}
+div.menu_button{
+	padding:5px;
+	text-align:center;
+	font-weight:bold;
+        cursor: pointer;
+}
+.wrong{
+    background: rgba(255,0,0,0.7) !important;
+}
+        </style>
     </head>
     <body>
-        <header>
-            <a href="index.html"><h1 id="logo_content">SIEDEM ZWIERZĄT</h1></a>
-        </header>
-        <nav>
-            <a href='index.html'><div class="nav_item">
-                START
-            </div></a>
-            <div class="menu">
-                WEWNĘTRZNE STRONY
-                <div class="nav_menu_side">
-                    <a  href='kameleon.html'><div class="nav_item">
-                        KAMELEON
-                    </div></a>
-                    <a  href='kot.html'><div class="nav_item">
-                        KOT
-                    </div></a>
-                    <a  href='kon.html'><div class="nav_item">
-                        KOŃ
-                    </div></a>
-                    <a  href='krowa.html'><div class="nav_item">
-                        KROWA
-                    </div></a>
-                    <a  href='kaczka.html'><div class="nav_item">
-                        KACZKA
-                    </div></a>
-                    <a  href='kangur.html'><div class="nav_item">
-                        KANGUR
-                    </div></a>
-                    <a  href='koala.html'><div class="nav_item">
-                        KOALA
-                    </div></a>
-                </div>
-            </div>
-            <div class="menu">
-                ZEWNĘTRZNE LINKI
-                <div class="nav_menu_side">
-                    <a  href='https://www.google.pl/search?client=opera&q=zwierzęta+na+k&sourceid=opera&ie=UTF-8&oe=UTF-8' target='_blank'><div class="nav_item">
-                        GOOGLE
-                    </div></a>
-                    <a  href='https://pl.wikipedia.org/w/index.php?search=zwierzęta&title=Specjalna:Szukaj&profile=default&fulltext=1&searchToken=5q0n2ahrigdr9tp7i0xd1k8od' target='_blank'><div class="nav_item">
-                        WIKIPEDIA
-                    </div></a>
-                    <a  href='https://search.yahoo.com/search?ei=UTF-8&fr=opera2&p=zwierzęta+na+k&guccounter=1' target='_blank'><div class="nav_item">
-                        YAHOO!
-                    </div></a>
-                    <a  href='https://www.bing.com/search?q=zwierzęta+na+k&form=OPRTSD&pc=OPER' target='_blank'><div class="nav_item">
-                        BING
-                        </div></a>
-                </div>
-            </div>
-            <a href='galeria.html'><div class="nav_item">
-                GALERIA
-            </div></a>
-        </nav>
-        <article id="aa"><a  href="#ankieta">Ankieta</a>-<a href="#tabela">Tabela</a></article>
-        <section>
-            <article>
-                <h2>STRONA GŁÓWNA</h2>
-                <h3>Na stronie znajdują się:</h3>
-                <ol>
-                    <li>Strona Główna</li>
-                    <li>Linki wewnętrzne</li>
-                    <ul>
-                        <li>Kameleon</li>
-                        <li>Kot</li>
-                        <li>Koń</li>
-                        <li>Kangur</li>
-                        <li>Kaczka</li>
-                        <li>Krowa</li>
-                        <li>Koala</li>
-                    </ul>
-                    <li>Linki zewenętrzne</li>
-                    <ul>
-                        <li>Google.pl</li>
-                        <li>Yahoo.pl</li>
-                        <li>Bing.pl</li>
-                        <li>Wikipedia.pl</li>
-                    </ul>
-                    <li>Galeria</li>
-                </ol>
-            </article>
-            <article  id="tabela">
-                <h2>Tabela</h2>
-                <h4>Któro zwierzę jest najbardziej lubiane</h4>
-                <table>
-                    <tr>
-                        <th>Zwierzę</th><th>%</th>
-                    </tr>
-                    <tr>
-                        <td>Koala</td><td>35</td>
-                    </tr>
-                    <tr>
-                        <td>Kaczka</td><td>4</td>
-                    </tr>
-                    <tr>
-                        <td>Koń</td><td>6</td>
-                    </tr>
-                    <tr>
-                        <td>Krowa</td><td>2</td>
-                    </tr>
-                    <tr>
-                        <td>Kangur</td><td>21</td>
-                    </tr>
-                    <tr>
-                        <td>Kot</td><td>9</td>
-                    </tr>
-                    <tr>
-                        <td>Kameleon</td><td>23</td>
-                    </tr>
-                </table>
-            </article>
-            <article  id="ankieta">
-                <h2>Ankieta</h2>
-                <form  method="GET" action="mailto:bar@wp.pl">
-                    <label  for="imie">Imię:</label>
-                    <input  type="text" name="imie" id="imie" placeholder="Anonim"  required/><br>
-                    <label  for="nazwisko">Nazwisko:</label>
-                    <input  type="text" name="nazwisko" id="nazwisko" placeholder="Anonimowy" required/><br>
-                    <label  for="wiek">Wiek:</label>
-                    <input type="number" name="wiek"  id="wiek" min="1" max="100"  placeholder="Numer" required/><br>
-                    <label  for="klasa">Klasa:</label>
-                    2tc<input type="radio" id="klasa" name="klasa" checked="checked" required/>
-                    nauczyciel<input type="radio"  name="klasa"  required/><br>
-                    <label for="lubie">Lubię:</label>
-                    HTML<input type="checkbox" id="lubie" name="lubie"/>
-                    CSS<input type="checkbox"  name="lubie"/>
-                    JS<input type="checkbox"  name="lubie"/><br>
-                    <input type="submit"  value="Wyślij"/>
-                    
-                </form>
-            </article>
-        </section>
-        <footer>
-            Barnaba Gańko kl. 2TC
-        </footer>
+	<div id="menu">
+		<div id="start" class="menu_button">START</div>
+		<div id="level">
+			<div id="lvl_easy" class="menu_button" >EASY</div>
+			<div id="lvl_medium" class="menu_button" >MEDIUM</div>
+			<div id="lvl_hard" class="menu_button" >HARD</div>
+		</div>
+	</div>
+        <h1>SUDOKU</h1>
+        <div  id="game_container">
+            <table  id="tabela_gry"></table>
+        </div>
+        <div  id="button_reset">RESET</div>
+        <h2>version 1.3.44.5</h2>
+        <h3>Barnaba Gańko Industries ⓒ 2018</h3>
+        
+        <script>
+    var tab_pos_num;
+//przechowywanie jakie cyfry moga byc w danym miejscu
+function start(){
+    document.querySelector("#level").style.display="block";
+    document.querySelector("#tabela_gry").innerHTML="";
+    
+	tab_pos_num = [];
+	for(var i=0; i<9; i++){
+		tab_pos_num[i] = new Array(9);
+		for(var j=0;j<9;j++){
+			tab_pos_num[i][j]= new Array(1,2,3,4,5,6,7,8,9,"x");
+		}
+	}
+
+	//przechowywanie stworzonej mapy 
+
+	var tab_rdy = [];
+
+
+	//przechowywanie snapshotow
+	var snap = function(tab_rdy, tab_used_num){
+		
+		this.tab_rdy =[];
+
+		for(var q=0; q<9; q++){
+			this.tab_rdy[q] = new Array(9);
+		}
+
+		for(var q=0; q<9; q++){
+			for(var w=0;w<9;w++){
+				var tmp = tab_rdy[q][w];            
+				this.tab_rdy[q][w]= (typeof tmp === "object"?tmp.slice():tmp);
+			}
+		}
+		this.tab_used_num = tab_used_num;
+	};
+
+	var tab_snap = [];
+
+	//tworzenie mapy
+	for(var i = 0; i<9;i++){
+		for(var j = 0; j<9;){
+
+			var blad =false;
+			
+			var losowa = tab_pos_num[i][j][Math.floor(Math.random()*(tab_pos_num[i][j].length-1))];
+				//console.log("POZYCJA x-"+j+" y-"+i+" LOSOWA:" +  losowa + "      Z mozliwość - " +  tab_pos_num[i][j]);
+				
+			if(losowa==="x"|| typeof losowa=="undefined"){
+
+				//	console.log("###############################################################################");
+
+				if(j===0){i--; j=8;}
+				else {j--;}
+				//	console.log("POZYCJA x-"+j+" y-"+i+" BYŁA LICZBA:" + tab_pos_num[i][j]);
+				tab_pos_num=tab_snap[1].tab_rdy;
+				//	console.log("ZRESTARTOWAŁEM TABLICE  DO  POPRZEDNIEGO  SPANSHOTA");
+				//	console.log("POZYCJA x-"+j+" y-"+i+" MOŻLIWOŚĆI:" + tab_pos_num[i][j]);
+				//	console.log("USUWAM :  "  + (tab_snap[0].tab_used_num));
+					if(tab_pos_num[i][j].length>1)
+				tab_pos_num[i][j].splice((tab_pos_num[i][j].indexOf(tab_snap[0].tab_used_num)),1);
+				//	console.log("POZYCJA x-"+j+" y-"+i+" OBECNE  MOŻLIWOŚĆI:" + tab_pos_num[i][j]);
+				blad=true;
+				//	console.log("USUWAM  SNAPSHOT");
+				tab_snap.shift();
+				//	console.log("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+
+			}
+
+			if(!blad){
+				for(var m = 8;m>=j;m--){
+					if(tab_pos_num[i][m].indexOf(losowa)==-1)continue;
+					else tab_pos_num[i][m].splice((tab_pos_num[i][m].indexOf(losowa)),1);
+				}
+				   
+				for(var n = 8;n>=i;n--){
+					if(tab_pos_num[n][j].indexOf(losowa)==-1) continue;
+					else tab_pos_num[n][j].splice((tab_pos_num[n][j].indexOf(losowa)),1);
+				}
+				switch(i){
+						case 0:
+						case 1:
+						case 2:
+							switch(j){
+								case 0:
+								case 1:
+								case 2:
+									for(var k=i;k<3;k++){
+										for(var l = 0;l<3;l++){
+											if(k==i  && l<=j)continue;
+											if(tab_pos_num[k][l].indexOf(losowa)==-1) continue;
+											else tab_pos_num[k][l].splice((tab_pos_num[k][l].indexOf(losowa)),1);
+										}
+									}
+									break;
+								case 3:
+								case 4:
+								case 5:
+									for(var k=i;k<3;k++){
+										for(var l  = 3;l<6;l++){
+											if(k==i  && l<=j)continue;
+											if(tab_pos_num[k][l].indexOf(losowa)==-1) continue;
+											else tab_pos_num[k][l].splice((tab_pos_num[k][l].indexOf(losowa)),1);
+										}
+									}
+									break;
+								case 6:
+								case 7:
+								case 8:
+									for(var k=i;k<3;k++){
+										for(var l  = 6;l<9;l++){
+											if(k==i  && l<=j)continue;
+											if(tab_pos_num[k][l].indexOf(losowa)==-1) continue;
+											else tab_pos_num[k][l].splice((tab_pos_num[k][l].indexOf(losowa)),1);
+										}
+									}
+									break;
+							}                            
+							break;
+						case 3:
+						case 4:
+						case 5:
+							switch(j){
+								case 0:
+								case 1:
+								case 2:
+									for(var k=i;k<6;k++){
+										for(var l = 0;l<3;l++){
+											if(k==i  && l<=j)continue;
+											if(tab_pos_num[k][l].indexOf(losowa)==-1) continue;
+											else tab_pos_num[k][l].splice((tab_pos_num[k][l].indexOf(losowa)),1);
+										}
+									}
+									break;
+								case 3:
+								case 4:
+								case 5:
+									for(var k=i;k<6;k++){
+										for(var l  = 3;l<6;l++){
+											if(k==i  && l<=j)continue;
+											if(tab_pos_num[k][l].indexOf(losowa)==-1) continue;
+											else tab_pos_num[k][l].splice((tab_pos_num[k][l].indexOf(losowa)),1);
+										}
+									}
+									break;
+								case 6:
+								case 7:
+								case 8:
+									for(var k=i;k<6;k++){
+										for(var l  = 6;l<9;l++){
+											if(k==i  && l<=j)continue;
+											if(tab_pos_num[k][l].indexOf(losowa)==-1) continue;
+											else tab_pos_num[k][l].splice((tab_pos_num[k][l].indexOf(losowa)),1);
+										}
+									}
+									break;
+							}
+							break;
+						case 6:
+						case 7:
+						case 8:
+							switch(j){
+								case 0:
+								case 1:
+								case 2:
+									for(var k=i;k<9;k++){
+										for(var l = 0;l<3;l++){
+											if(k==i  && l<=j)continue;
+											if(tab_pos_num[k][l].indexOf(losowa)==-1) continue;
+											else tab_pos_num[k][l].splice((tab_pos_num[k][l].indexOf(losowa)),1);
+										}
+									}
+									break;
+								case 3:
+								case 4:
+								case 5:
+									for(var k=i;k<9;k++){
+										for(var l  = 3;l<6;l++){
+											if(k==i  && l<=j)continue;
+											if(tab_pos_num[k][l].indexOf(losowa)==-1) continue;
+											else tab_pos_num[k][l].splice((tab_pos_num[k][l].indexOf(losowa)),1);
+										}
+									}
+									break;
+								case 6:
+								case 7:
+								case 8:
+									for(var k=i;k<9;k++){
+										for(var l = 6;l<9;l++){
+											if(k==i  && l<=j)continue;
+											if(tab_pos_num[k][l].indexOf(losowa)==-1) continue;
+											else tab_pos_num[k][l].splice((tab_pos_num[k][l].indexOf(losowa)),1);
+										}
+									}
+									break;
+							}
+							break;
+					}
+				
+				tab_pos_num[i][j]=losowa;
+				var los=  losowa;
+				var snapik = new snap(tab_pos_num, los);
+				tab_snap.unshift(snapik);
+				j++;
+			}
+		}
+	}
+}
+	//USUWANIE LOSOWYCH MIEJSC Z MAPY
+	var tab_del =[];
+	function elem_del(lvl){
+		document.querySelector("#tabela_gry").innerHTML="";
+                document.querySelector("#level").style.display="none";
+
+		for(var q=0; q<9; q++){
+			tab_del[q] = new Array(9);
+		}
+
+		for(var q=0; q<9; q++){
+			for(var w=0;w<9;w++){
+                            var tmp = tab_pos_num[q][w];            
+                            tab_del[q][w] = (typeof tmp === "object"?tmp.slice():tmp);
+			}
+		}
+
+		for(var i = 0;i<lvl;){
+			var rand_x = Math.floor(Math.random()*9);
+			var rand_y = Math.floor(Math.random()*9);
+			if(tab_del[rand_y][rand_x]=="x")continue;
+			else{
+				tab_del[rand_y][rand_x]="x";
+				i++;
+			}
+		}
+                wypisz();
+	}
+	
+	function wypisz(){
+	//WYPISYWANIE WSZYSTKIEGO NA MAPE
+		var tabela_gry = document.querySelector("#tabela_gry");
+
+		for(var i =0;i<9;i++){
+			var tr = document.createElement("tr");
+			for(var j =0;j<9;j++){
+				var td = document.createElement("td");
+                                td.setAttribute("y",i);
+                                td.setAttribute("x",j);
+				if(tab_del[i][j]!=="x"){
+					td.classList.add("unclickable");
+					td.innerText=tab_del[i][j];
+                                        tr.appendChild(td);
+				}
+				else{
+					var inputek = document.createElement("input");
+					inputek.setAttribute("type","text");
+					inputek.setAttribute("maxlength","1");
+					inputek.setAttribute("max","9");
+					inputek.setAttribute("min","1");
+					inputek.setAttribute("y",i);
+					inputek.setAttribute("x",j);
+					inputek.classList.add("number_input");
+                                        inputek.addEventListener('input', lighten); 
+					td.appendChild(inputek);
+					tr.appendChild(td);
+				}
+			}
+			tabela_gry.appendChild(tr);
+		}
+	}
+
+//TABLICA ZŁYCH MIEJSC
+//[[y,x],[y,x]]
+var tab_conf = [];
+
+//NIEPOZWALAMY  WCISNĄĆ NIELICZBY
+document.addEventListener('keydown',  function(event){
+        var key = window.event ? event.keyCode : event.which;
+        if (event.keyCode === 8 || event.keyCode === 46) {
+            return true;
+        } else if ( key < 48 || key > 57 ) {
+        event.preventDefault();
+        }
+ });
+
+//PODŚWIETLANIE  ZŁYCH MIEJSC
+function lighten(){
+    
+
+    
+    var elem_x = this.getAttribute("x");
+    var elem_y = this.getAttribute("y");
+    var elem_value = this.value;
+    
+    var conflict = false;
+    
+    var conf_x;
+    var conf_y;
+    
+    for(var m = 0;m<9;m++){
+            if(m != elem_x){
+                if(tab_del[elem_y][m] == elem_value){
+                    conflict=true;
+                    tab_conf.unshift([[elem_y,m],[elem_y,elem_x]]);
+                    break;
+                }
+            } 
+            else continue;
+    }
+
+    for(var m = 0;m<9;m++){
+            if(m != elem_y){
+                if(tab_del[m][elem_x] == elem_value){
+                    conflict = true;
+                    tab_conf.unshift([[m,elem_x],[elem_y,elem_x]]);
+                    break;
+                }
+            } 
+            else continue;
+    }
+
+    switch(elem_y*1){
+        case 0:
+        case 1:
+        case 2:
+            switch(elem_x*1){
+                case 0:
+                case 1:
+                case 2:
+                    console.log(elem_x +  elem_y)
+                    for(var k=0;  k<3;  k++){
+                        for(var l = 0;l<3;l++){
+                            if(k==elem_y  && l==elem_x)continue;
+                            else{
+                                if(tab_del[k][l] == elem_value){
+                                    tab_conf.unshift([[k,l],[elem_y,elem_x]]);
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    break;
+                case 3:
+                case 4:
+                case 5:
+                    for(var k=0;  k<3;  k++){
+                        for(var l = 3;l<6;l++){
+                            if(k==elem_y  && l==elem_x)continue;
+                            else{
+                                if(tab_del[k][l] == elem_value){
+                                    tab_conf.unshift([[k,l],[elem_y,elem_x]]);
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    break;
+                case 6:
+                case 7:
+                case 8:
+                    for(var k=0;  k<3;  k++){
+                        for(var l = 6;l<9;l++){
+                            if(k==elem_y  && l==elem_x)continue;
+                            else{
+                                if(tab_del[k][l] == elem_value){
+                                    tab_conf.unshift([[k,l],[elem_y,elem_x]]);
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    break;
+            }                            
+            break;
+        case 3:
+        case 4:
+        case 5:
+            switch(elem_x*1){
+                case 0:
+                case 1:
+                case 2:
+                    for(var k=3;  k<6;  k++){
+                        for(var l = 0;l<3;l++){
+                            if(k==elem_y  && l==elem_x)continue;
+                            else{
+                                if(tab_del[k][l] == elem_value){
+                                    tab_conf.unshift([[k,l],[elem_y,elem_x]]);
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    break;
+                case 3:
+                case 4:
+                case 5:
+                    for(var k=3;  k<6;  k++){
+                        for(var l = 3;l<6;l++){
+                            if(k==elem_y  && l==elem_x)continue;
+                            else{
+                                if(tab_del[k][l] == elem_value){
+                                    tab_conf.unshift([[k,l],[elem_y,elem_x]]);
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    break;
+                case 6:
+                case 7:
+                case 8:
+                    for(var k=3;  k<6;  k++){
+                        for(var l = 6;l<9;l++){
+                            if(k==elem_y  && l==elem_x)continue;
+                            else{
+                                if(tab_del[k][l] == elem_value){
+                                    tab_conf.unshift([[k,l],[elem_y,elem_x]]);
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    break;
+            }                            
+            break;
+        case 6:
+        case 7:
+        case 8:
+            switch(elem_x*1){
+                case 0:
+                case 1:
+                case 2:
+                    for(var k=6;  k<9;  k++){
+                        for(var l = 0;l<3;l++){
+                            if(k==elem_y  && l==elem_x)continue;
+                            else{
+                                if(tab_del[k][l] == elem_value){
+                                    tab_conf.unshift([[k,l],[elem_y,elem_x]]);
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    break;
+                case 3:
+                case 4:
+                case 5:
+                    for(var k=6;  k<9;  k++){
+                        for(var l = 3;l<6;l++){
+                            if(k==elem_y  && l==elem_x)continue;
+                            else{
+                                if(tab_del[k][l] == elem_value){
+                                    tab_conf.unshift([[k,l],[elem_y,elem_x]]);
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    break;
+                case 6:
+                case 7:
+                case 8:
+                    for(var k=6;  k<9;  k++){
+                        for(var l = 6;l<9;l++){
+                            if(k==elem_y  && l==elem_x)continue;
+                            else{
+                                if(tab_del[k][l] == elem_value){
+                                    tab_conf.unshift([[k,l],[elem_y,elem_x]]);
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    break;
+            }                            
+            break;
+    }
+    elem_value= (elem_value!=""?elem_value:"x");
+    tab_del[elem_y][elem_x]= elem_value;
+    
+  //  if()
+  
+var  tds = document.querySelectorAll("td");
+for(var i =  0;i<tds.length ;i++){
+    tds[i].classList.remove("wrong");
+}
+
+for(var i = 0;i<tab_conf.length;i++){
+    var y1 = tab_conf[i][0][0];
+    var x1 = tab_conf[i][0][1];
+    var y2 = tab_conf[i][1][0];
+    var x2 = tab_conf[i][1][1];
+        
+    if((tab_del[y1][x1]!=tab_del[y2][x2]) || (tab_del[y1][x1]=="x"  &&  tab_del[y2][x2]=="x")){
+        tab_conf.splice(i,1);
+    }
+    else{
+        tds[((y1*9)+x1*1)].classList.add("wrong");
+        tds[((y2*9)+x2*1)].classList.add("wrong");
+    }
+}
+wygrana();
+};
+
+//SPRAWDZANIE WYGRANEJ
+function wygrana(){
+    var  tds = document.querySelectorAll("td");
+    var  inputs = document.querySelectorAll("input");
+
+    var wygrana = true;
+    
+    for(var i =  0;i<tds.length ;i++){
+        if(tds[i].classList.contains("wrong"))wygrana=false;
+    }
+    for(var i =  0;i<inputs.length ;i++){
+        if(inputs[i].value=="x"||inputs[i].value=="")wygrana=false;
+    }
+    if(wygrana)console.log("WYGRaŁES!");
+    
+}
+
+document.querySelector("#button_reset").addEventListener('click', function(){location.reload();});
+document.querySelector("#start").addEventListener('click', start);
+document.querySelector("#lvl_easy").addEventListener('click', function(){elem_del(5);});
+document.querySelector("#lvl_medium").addEventListener('click', function(){elem_del(40);});
+document.querySelector("#lvl_hard").addEventListener('click', function(){elem_del(60);});
+
+        </script>
     </body>
 </html>
