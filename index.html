@@ -137,6 +137,9 @@ div.menu_button{
 .wrong{
     background: rgba(255,0,0,0.7) !important;
 }
+.right{
+    background: rgba(0,255,0,0.7) !important;
+}
         </style>
     </head>
     <body>
@@ -673,13 +676,17 @@ function wygrana(){
     for(var i =  0;i<inputs.length ;i++){
         if(inputs[i].value=="x"||inputs[i].value=="")wygrana=false;
     }
-    if(wygrana)console.log("WYGRaŁES!");
+    if(wygrana){
+        for(var i =  0;i<tds.length ;i++){
+            tds[i].classList.add("right");
+        }
+    }
     
 }
 
 document.querySelector("#button_reset").addEventListener('click', function(){location.reload();});
 document.querySelector("#start").addEventListener('click', start);
-document.querySelector("#lvl_easy").addEventListener('click', function(){elem_del(5);});
+document.querySelector("#lvl_easy").addEventListener('click', function(){elem_del(25);});
 document.querySelector("#lvl_medium").addEventListener('click', function(){elem_del(40);});
 document.querySelector("#lvl_hard").addEventListener('click', function(){elem_del(60);});
 
